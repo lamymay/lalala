@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- 对话框：浅色系统主题 -->
+    <color name="dialog_panel_bg">#FFFFFFFF</color>
+    <color name="dialog_text_primary">#FF000000</color>
+    <color name="dialog_text_secondary">#99000000</color>
+    <color name="dialog_text_hint">#66000000</color>
+    <color name="dialog_divider">#1F000000</color>
+    <color name="dialog_tile_bg">#14000000</color>
+    <color name="dialog_tile_bg_selected">#24000000</color>
+    <color name="dialog_tile_stroke_selected">@color/colorAccent</color>
+    <color name="dialog_input_fill">#0F000000</color>
+    <color name="dialog_input_stroke">#33000000</color>
+</resources>

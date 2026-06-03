@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 对话框：深色系统主题 → 纯黑底 -->
+    <color name="dialog_panel_bg">#FF000000</color>
+    <color name="dialog_text_primary">#FFFFFFFF</color>
+    <color name="dialog_text_secondary">#B3FFFFFF</color>
+    <color name="dialog_text_hint">#66FFFFFF</color>
+    <color name="dialog_divider">#33FFFFFF</color>
+    <color name="dialog_tile_bg">#33FFFFFF</color>
+    <color name="dialog_tile_bg_selected">#55FFFFFF</color>
+    <color name="dialog_tile_stroke_selected">#FFFFD54F</color>
+    <color name="dialog_input_fill">#33FFFFFF</color>
+    <color name="dialog_input_stroke">#44FFFFFF</color>
+</resources>

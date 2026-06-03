@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">lalala</string>
+    <string name="menu_exit">退出</string>
+    <string name="menu_replace_image">更换图片</string>
+    <string name="menu_change_animation">选择切换动画</string>
+    <string name="menu_reveal_step">动画步长</string>
+    <string name="menu_reveal_step_fmt">动画步长：%1$d px</string>
+    <string name="dialog_pick_reveal_step_title">每点击多露出（像素）</string>
+    <string name="reveal_step_tile_fmt">%1$d px</string>
+    <string name="reveal_step_custom_label">自定义步长</string>
+    <string name="reveal_step_custom_hint">输入像素</string>
+    <string name="reveal_step_apply">确定</string>
+    <string name="toast_reveal_step_switched">动画步长：%1$d px</string>
+    <string name="toast_reveal_step_invalid">请输入 %1$d–%2$d 之间的整数</string>
+    <string name="menu_dialog_style">菜单弹出风格</string>
+    <string name="menu_dialog_style_fmt">菜单弹出风格：%1$s</string>
+    <string name="dialog_pick_animation_title">选一种显示方式</string>
+    <string name="dialog_pick_menu_style_title">选择菜单弹出风格</string>
+    <string name="toast_menu_style_switched">菜单风格：%1$s</string>
+    <string name="menu_append_image">追加下一个图片</string>
+    <string name="toast_animation_switched">切换动画：%1$s</string>
+    <string name="toast_image_replaced">已更换图片</string>
+    <string name="toast_image_appended">已追加，共 %1$d 张</string>
+    <string name="toast_pick_image_failed">选取图片失败</string>
+</resources>
