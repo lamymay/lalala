@@ -85,21 +85,22 @@ public enum RevealAnimation {
     }
 
     public void apply(RevealViews views, Bitmap bitmap, int level, int coverColor) {
-        resetImage(views.imageView);
         views.imageView.setImageBitmap(bitmap);
         views.imageView.setAlpha(1f);
 
+        if (level <= 0 && type == Type.TRAIN_SCROLL) {
+            prepareTrainIdle(views);
+            return;
+        }
+
+        resetImage(views.imageView);
+
         if (level <= 0) {
-            if (type == Type.TRAIN_SCROLL) {
-                int w = views.stageWidth();
-                int h = views.stageHeight();
-                views.setCoverColor(coverColor);
-                applyTrainScroll(views, 0f, w, h);
-            }
             views.showFullBlackCover();
             return;
         }
 
+        views.imageView.setVisibility(View.VISIBLE);
         views.hideFullCover();
         views.setCoverColor(coverColor);
 
@@ -174,10 +175,24 @@ public enum RevealAnimation {
         layoutMask(views.maskCenter, mw, mh, Gravity.CENTER);
     }
 
+    /** 拉火车待机：纯黑屏，图片在屏外待命（不绘制、不占布局）。 */
+    private static void prepareTrainIdle(RevealViews views) {
+        int w = views.stageWidth();
+        views.hidePartialMasks();
+        views.imageView.setScaleX(1f);
+        views.imageView.setScaleY(1f);
+        views.imageView.setRotation(0f);
+        views.imageView.setClipBounds(null);
+        views.imageView.setTranslationX(-w);
+        views.imageView.setTranslationY(0f);
+        views.imageView.setVisibility(View.GONE);
+        views.showFullBlackCover();
+    }
+
     /**
-     * 拉火车：起始整图在屏外左侧（右缘贴屏幕左缘），每次点击向右移 stepPx；
-     * 经全屏展示后继续右移，直至左缘离开屏幕右缘后循环。
-     * progress 0 → translationX = -w；progress 1 → translationX = +w。
+     * 拉火车：level=0 仅黑屏；首次点击后图从屏外左侧进入（右缘贴左边界），
+     * 每次再向右 stepPx，直至左缘离开屏右缘后循环。
+     * progress 0 → -w，progress 1 → +w。
      */
     private static void applyTrainScroll(RevealViews views, float progress, int w, int h) {
         views.hidePartialMasks();
@@ -203,6 +218,7 @@ public enum RevealAnimation {
     }
 
     private static void resetImage(ImageView imageView) {
+        imageView.setVisibility(View.VISIBLE);
         imageView.setScaleX(1f);
         imageView.setScaleY(1f);
         imageView.setTranslationX(0f);

@@ -72,6 +72,7 @@ final class RevealViews {
         hidePartialMasks();
         maskFull.setVisibility(View.VISIBLE);
         maskFull.setBackgroundColor(INITIAL_COVER_COLOR);
+        maskFull.bringToFront();
         stage.setBackgroundColor(INITIAL_COVER_COLOR);
     }
 

@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 revealAnimation.ordinal(),
                 animation -> {
                     revealAnimation = animation;
-                    applyRevealState();
+                    resetReveal();
                     Toast.makeText(
                             this,
                             getString(R.string.toast_animation_switched, animation.getLabel()),
